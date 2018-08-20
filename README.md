@@ -1,4 +1,4 @@
-# Build api with gorester
+# Build api with [gorester](https://github.com/DaoYoung/gorester "GoRester")
 This Example is about student and teacher at school.
 * new student will go to school, like create a student
 * you can find students who like basketball, and look for someone's information
@@ -51,8 +51,8 @@ gorester.CreateRoutes(school, endpoint.StudentController{}.Rester(), "create", "
 ```
 
 ## Go build main.go
-* you can create/update/list/findOne/delete student.
-* you can insert some code before/after create/update/delete student.
+* now, you can create/update/list/findOne/delete student.
+* you can create before/after function for create/update/delete student.
 ```
 func (action *StudentController) beforeCreate(c *gin.Context, m gorester.ResourceInterface) {
 	//valid data
