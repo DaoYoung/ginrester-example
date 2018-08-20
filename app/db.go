@@ -5,6 +5,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"fmt"
 	"github.com/DaoYoung/ginrester"
+	"ginrester-example/model"
 )
 
 func InitDb() error {
@@ -21,5 +22,6 @@ func InitDb() error {
 		return err
 	}
 	ginrester.Db.LogMode(true)
+	ginrester.Db.AutoMigrate(&model.Student{}, &model.Teacher{})
 	return nil
 }
