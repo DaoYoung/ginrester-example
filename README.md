@@ -59,7 +59,7 @@ func (action *StudentController) afterCreate(c *gin.Context, m gorester.Resource
 }
 ```
 * field condition in url will work, if you want filter list.
-[filter_list.png](filter_list.png)
+![filter_list.png](filter_list.png)
 
 ##So as teacher.
 Create model, controller, route etc at the same way
@@ -72,7 +72,7 @@ Create model, controller, route etc at the same way
 
 ### Duplicate resource ID in route
 Default key is ":id", so it will confuse to get key's value at two level.
-[route_key_duplicate.png](route_key_duplicate.png)
+![route_key_duplicate.png](route_key_duplicate.png)
 Declare func `IsRestRoutePk` will help to create unique key
-[route_key.png](route_key.png)
+![route_key.png](route_key.png)
 Now, you can get students from teacher.
