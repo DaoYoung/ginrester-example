@@ -1,5 +1,5 @@
-# Examples build api with gorester
-This is about student and teacher at school.
+# Build api with gorester
+This Example is about student and teacher at school.
 * new student will go to school, like create a student
 * you can find students who like basketball, and look for someone's information
 * when someone transferred, it will be delete name at student book
@@ -21,17 +21,20 @@ type Student struct {
 ```
 
 ## Create controller
-Embed `gorester.Controller`, and declare func model()(set up resource), modelSlice()(for list result), Rester()(controller factory)
+Embed `gorester.Controller`, and declare 3 func: model(), modelSlice(), Rester()
 ```
 type StudentController struct {
 	gorester.Controller
 }
+//set up resource
 func (action *StudentController) model() gorester.ResourceInterface {
 	return &(model.Student{})
 }
+//for list result
 func (action *StudentController) modelSlice() interface{} {
 	return &[]model.Student{}
 }
+//controller factory
 func (action StudentController) Rester() (actionPtr *StudentController) {
 	action.Init(&action)
 	return  &action
