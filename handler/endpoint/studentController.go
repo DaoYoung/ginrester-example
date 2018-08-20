@@ -1,15 +1,15 @@
 package endpoint
 
 import (
-	"github.com/DaoYoung/gorester"
+	"github.com/DaoYoung/ginrester"
 	"ginrester-example/model"
 	"github.com/gin-gonic/gin"
 )
 
 type StudentController struct {
-	gorester.Controller
+	ginrester.Controller
 }
-func (action *StudentController) model() gorester.ResourceInterface {
+func (action *StudentController) model() ginrester.ResourceInterface {
 	return &(model.Student{})
 }
 func (action *StudentController) modelSlice() interface{} {
@@ -19,6 +19,6 @@ func (action StudentController) Rester() (actionPtr *StudentController) {
 	action.Init(&action)
 	return  &action
 }
-func (action *StudentController) afterCreate(c *gin.Context, m gorester.ResourceInterface) {
+func (action *StudentController) afterCreate(c *gin.Context, m ginrester.ResourceInterface) {
 	//todo log something
 }

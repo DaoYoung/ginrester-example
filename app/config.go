@@ -10,7 +10,7 @@ var Config = struct {
 	Db struct {
 		Host     string `default:"localhost"`
 		Port     uint64 `default:"3306"`
-		Name     string `default:"gorester"`
+		Name     string `default:"ginrester"`
 		User     string `default:"root"`
 		Password string `default:"123456"`
 	}

@@ -1,4 +1,4 @@
-# Build api with [gorester](https://github.com/DaoYoung/gorester "GoRester")
+# Build api with [ginrester](https://github.com/DaoYoung/ginrester "GoRester")
 This Example is about student and teacher at school.
 * new student will go to school, like create a student
 * you can find students who like basketball, and look for someone's information
@@ -7,11 +7,11 @@ This Example is about student and teacher at school.
 * Teacher has many students
 
 ## Create model
-Embed `gorester.Model` in you code, like this
+Embed `ginrester.Model` in you code, like this
 
 ```
 type Student struct {
-	gorester.Model
+	ginrester.Model
 	Name          string `json:"name"`
 	Hobby         string `json:"hobby"`
 	Age           int    `json:"age"`
@@ -21,13 +21,13 @@ type Student struct {
 ```
 
 ## Create controller
-Embed `gorester.Controller`, and declare 3 func: model(), modelSlice(), Rester()
+Embed `ginrester.Controller`, and declare 3 func: model(), modelSlice(), Rester()
 ```
 type StudentController struct {
-	gorester.Controller
+	ginrester.Controller
 }
 //set up resource
-func (action *StudentController) model() gorester.ResourceInterface {
+func (action *StudentController) model() ginrester.ResourceInterface {
 	return &(model.Student{})
 }
 //for list result
@@ -43,21 +43,21 @@ func (action StudentController) Rester() (actionPtr *StudentController) {
 ## Create route
 simple and easy to create restful route.
 ```
-gorester.CreateRoutes(school, endpoint.StudentController{}.Rester())
+ginrester.CreateRoutes(school, endpoint.StudentController{}.Rester())
 ```
 Append arguments at last, if you want personal actions.
 ```
-gorester.CreateRoutes(school, endpoint.StudentController{}.Rester(), "create", "list", "info")
+ginrester.CreateRoutes(school, endpoint.StudentController{}.Rester(), "create", "list", "info")
 ```
 
 ## Go build main.go
 * now, you can create/update/list/findOne/delete student.
 * you can create before/after function for create/update/delete student.
 ```
-func (action *StudentController) beforeCreate(c *gin.Context, m gorester.ResourceInterface) {
+func (action *StudentController) beforeCreate(c *gin.Context, m ginrester.ResourceInterface) {
 	//valid data
 }
-func (action *StudentController) afterCreate(c *gin.Context, m gorester.ResourceInterface) {
+func (action *StudentController) afterCreate(c *gin.Context, m ginrester.ResourceInterface) {
 	//log something
 }
 ```

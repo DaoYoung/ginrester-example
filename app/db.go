@@ -4,7 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"fmt"
-	"github.com/DaoYoung/gorester"
+	"github.com/DaoYoung/ginrester"
 )
 
 func InitDb() error {
@@ -17,9 +17,9 @@ func InitDb() error {
 		Config.Db.Port,
 		Config.Db.Name,
 	)
-	if gorester.Db, err = gorm.Open("mysql", dsn); err != nil {
+	if ginrester.Db, err = gorm.Open("mysql", dsn); err != nil {
 		return err
 	}
-	gorester.Db.LogMode(true)
+	ginrester.Db.LogMode(true)
 	return nil
 }

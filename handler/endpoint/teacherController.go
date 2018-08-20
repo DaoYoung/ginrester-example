@@ -1,17 +1,17 @@
 package endpoint
 
 import (
-	"github.com/DaoYoung/gorester"
+	"github.com/DaoYoung/ginrester"
 	"ginrester-example/model"
 )
 
 type TeacherController struct {
-	gorester.Controller
+	ginrester.Controller
 }
 func (action *TeacherController) IsRestRoutePk() bool {
 	return true
 }
-func (action *TeacherController) model() gorester.ResourceInterface {
+func (action *TeacherController) model() ginrester.ResourceInterface {
 	return &(model.Teacher{})
 }
 func (action *TeacherController) modelSlice() interface{} {

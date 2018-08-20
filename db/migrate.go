@@ -2,9 +2,9 @@ package db
 
 import (
 	"ginrester-example/model"
-	"github.com/DaoYoung/gorester"
+	"github.com/DaoYoung/ginrester"
 )
 
 func InitTables() {
-	gorester.Db.AutoMigrate(&model.Student{}, &model.Teacher{})
+	ginrester.Db.AutoMigrate(&model.Student{}, &model.Teacher{})
 }

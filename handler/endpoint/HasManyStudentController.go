@@ -1,7 +1,7 @@
 package endpoint
 
 import (
-	"github.com/DaoYoung/gorester"
+	"github.com/DaoYoung/ginrester"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,7 +13,7 @@ func (action HasManyStudentController) Rester() (actionPtr *HasManyStudentContro
 	action.Init(&action)
 	return &action
 }
-func (action *HasManyStudentController) parentController() gorester.ControllerInterface {
+func (action *HasManyStudentController) parentController() ginrester.ControllerInterface {
 	return TeacherController{}.Rester()
 }
 func (action *HasManyStudentController) listCondition(c *gin.Context) map[string]interface{} {

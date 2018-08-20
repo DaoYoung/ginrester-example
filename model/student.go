@@ -1,11 +1,11 @@
 package model
 
 import (
-	"github.com/DaoYoung/gorester"
+	"github.com/DaoYoung/ginrester"
 )
 
 type Student struct {
-	gorester.Model
+	ginrester.Model
 	Name          string `json:"name"`
 	Hobby         string `json:"hobby"`
 	Age           int    `json:"age"`
