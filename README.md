@@ -1,4 +1,4 @@
-#Examples build api with gorester
+# Examples build api with gorester
 This is about student and teacher at school.
 * new student will go to school, like create a student
 * you can find students who like basketball, and look for someone's information
@@ -6,7 +6,7 @@ This is about student and teacher at school.
 * so as teachers
 * Teacher has many students
 
-##Create model
+## Create model
 Embed `gorester.Model` in you code, like this
 
 ```
@@ -20,7 +20,7 @@ type Student struct {
 }
 ```
 
-##Create controller
+## Create controller
 Embed `gorester.Controller`, and declare func model()(set up resource), modelSlice()(for list result), Rester()(controller factory)
 ```
 type StudentController struct {
@@ -37,7 +37,7 @@ func (action StudentController) Rester() (actionPtr *StudentController) {
 	return  &action
 }
 ```
-##Create route
+## Create route
 simple and easy to create restful route.
 ```
 gorester.CreateRoutes(school, endpoint.StudentController{}.Rester())
@@ -47,7 +47,7 @@ Append arguments at last, if you want personal actions.
 gorester.CreateRoutes(school, endpoint.StudentController{}.Rester(), "create", "list", "info")
 ```
 
-##Go build main.go
+## Go build main.go
 * you can create/update/list/findOne/delete student.
 * you can insert some code before/after create/update/delete student.
 ```
@@ -59,20 +59,20 @@ func (action *StudentController) afterCreate(c *gin.Context, m gorester.Resource
 }
 ```
 * field condition in url will work, if you want filter list.
-(route)[filter_list.png]
+[filter_list.png](filter_list.png)
 
 ##So as teacher.
 Create model, controller, route etc at the same way
 
-##Teacher has many students
+## Teacher has many students
 
-###Create HasManyStudentController
+### Create HasManyStudentController
 * It's contain `StudentController`, and declare `parentController func`.
 * The resource teacher connect to student by field 'head_teacher_id', so we need declare `listCondition func`
 
-###Duplicate resource ID in route
+### Duplicate resource ID in route
 Default key is ":id", so it will confuse to get key's value at two level.
-(route)[route_key_duplicate.png]
+[route_key_duplicate.png](route_key_duplicate.png)
 Declare func `IsRestRoutePk` will help to create unique key
-(route)[route_key.png]
+[route_key.png](route_key.png)
 Now, you can get students from teacher.
