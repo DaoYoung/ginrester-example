@@ -1,10 +1,13 @@
 package model
 
-import "gorester"
+import (
+	"gorester"
+)
 
 type Student struct {
-	gorester.BaseFields
-	Name string
-	Age int
-	Sex int
+	gorester.Model
+	Name string `json:"name"`
+	Age  int    `json:"age"`
+	Sex  int    `json:"sex"`
+	HeadTeacherId  int    `json:"head_teacher_id"`
 }

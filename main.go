@@ -5,6 +5,7 @@ import (
 	"log"
 	"ginrester-example/handler"
 	"ginrester-example/app"
+	"ginrester-example/db"
 )
 
 func main() {
@@ -16,6 +17,7 @@ func main() {
 		log.Println(22)
 		log.Fatal(err)
 	}
+	db.InitTables()
 	r := gin.New()
 	r.Use(gin.Logger())
 	handler.Serve(r)

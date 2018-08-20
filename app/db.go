@@ -2,15 +2,13 @@ package app
 
 import (
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"fmt"
-	"log"
+	"gorester"
 )
-
-var Db *gorm.DB
 
 func InitDb() error {
 	var err error
-log.Print(Config.Db)
 	dsn := fmt.Sprintf(
 		"%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local",
 		Config.Db.User,
@@ -19,9 +17,9 @@ log.Print(Config.Db)
 		Config.Db.Port,
 		Config.Db.Name,
 	)
-	if Db, err = gorm.Open("mysql", dsn); err != nil {
+	if gorester.Db, err = gorm.Open("mysql", dsn); err != nil {
 		return err
 	}
-	Db.LogMode(true)
+	gorester.Db.LogMode(true)
 	return nil
 }

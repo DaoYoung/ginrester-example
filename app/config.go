@@ -5,12 +5,12 @@ import (
 )
 
 var Config = struct {
-	Port    string `default:":8081"`
+	Port    string `default:":8080"`
 	PerPage int    `default:"10"`
 	Db struct {
 		Host     string `default:"localhost"`
 		Port     uint64 `default:"3306"`
-		Name     string `default:"apibuilder"`
+		Name     string `default:"gorester"`
 		User     string `default:"root"`
 		Password string `default:"123456"`
 	}
