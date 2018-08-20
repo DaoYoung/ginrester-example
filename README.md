@@ -61,7 +61,7 @@ func (action *StudentController) afterCreate(c *gin.Context, m gorester.Resource
 	//log something
 }
 ```
-* field condition in url will work, if you want filter list.
+* field condition in url will work, if you want filter list. Like this: <http://localhost:8080/school/students?hobby=basketball>
 ![filter_list.png](filter_list.png)
 
 ##So as teacher.
