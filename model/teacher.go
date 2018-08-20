@@ -1,6 +1,6 @@
 package model
 
-import "gorester"
+import "github.com/DaoYoung/gorester"
 
 type Teacher struct {
 	gorester.Model

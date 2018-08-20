@@ -1,7 +1,7 @@
 package model
 
 import (
-	"gorester"
+	"github.com/DaoYoung/gorester"
 )
 
 type Student struct {

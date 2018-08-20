@@ -2,7 +2,7 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"gorester"
+	"github.com/DaoYoung/gorester"
 	"ginrester-example/handler/endpoint"
 )
 

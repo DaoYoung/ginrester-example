@@ -1,7 +1,7 @@
 package endpoint
 
 import (
-	"gorester"
+	"github.com/DaoYoung/gorester"
 	"ginrester-example/model"
 	"github.com/gin-gonic/gin"
 )

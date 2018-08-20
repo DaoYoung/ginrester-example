@@ -2,7 +2,7 @@ package db
 
 import (
 	"ginrester-example/model"
-	"gorester"
+	"github.com/DaoYoung/gorester"
 )
 
 func InitTables() {

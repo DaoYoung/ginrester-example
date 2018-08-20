@@ -4,7 +4,7 @@ import (
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"fmt"
-	"gorester"
+	"github.com/DaoYoung/gorester"
 )
 
 func InitDb() error {
