@@ -11,6 +11,6 @@ func Serve(engine *gin.Engine) {
 	{
 		gorester.CreateRoutes(school, endpoint.StudentController{}.Rester())
 		gorester.CreateRoutes(school, endpoint.TeacherController{}.Rester())
-		gorester.CreateRoutes(school, endpoint.HasManyStudentController{}.Rester(), "list")
+		gorester.CreateRoutes(school, endpoint.HasManyStudentController{}.Rester(), "list", "info")
 	}
 }
