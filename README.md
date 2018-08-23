@@ -1,10 +1,13 @@
-# Build api with [ginrester](https://github.com/DaoYoung/ginrester "GoRester")
+# Build api with [ginrester](https://github.com/DaoYoung/ginrester "ginrester")
 This Example is about student and teacher at school.
 * new student will go to school, like create a student
 * you can find students who like basketball, and look for someone's information
 * when someone transferred, it will be delete name at student book
 * so as teachers
 * Teacher has many students
+
+## Install GinRester
+`go get github.com/DaoYoung/ginrester`
 
 ## Create model
 Embed `ginrester.Model` in you code, like this
