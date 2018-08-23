@@ -78,7 +78,7 @@ Create model, controller, route etc at the same way
 * The resource teacher connect to student by field 'head_teacher_id', so we need declare `listCondition func`
 
 ### Duplicate resource ID in route
-Default key is ":id", so it will confuse to get key's value at two level resource.
+Default key is `:id`, so it will confuse to get key's value at two level resource.
 ![route_key_duplicate.png](route_key_duplicate.png)
 Func `IsRestRoutePk` will help to create unique key
 ```
