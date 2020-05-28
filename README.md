@@ -55,7 +55,7 @@ ginrester.CreateRoutes(school, endpoint.StudentController{}.Rester(), "create", 
 
 ## Go build main.go
 * now, you can create/update/list/findOne/delete student.
-![./curd.png](curd.png)
+![curd.png](./curd.png)
 * you can create before/after function for create/update/delete student.
 ```
 func (action *StudentController) beforeCreate(c *gin.Context, m ginrester.ResourceInterface) {
